@@ -24,13 +24,13 @@ import javax.sql.DataSource;
 @Configuration
 @PropertySource(ignoreResourceNotFound = true, value = { "classpath:jdbc.properties" })
 // ⬇ 配置这个dataSource的mapper文件路径
-@MapperScan(basePackages = { "com.example.myuser.mapper" }, sqlSessionFactoryRef = "rdsSqlSessionFactory")
+@MapperScan(basePackages = { "com.example.mygoods.mapper" }, sqlSessionFactoryRef = "rdsSqlSessionFactory")
 public class RDSDataSourceConfiguration {
 
     /**
      * dataSource (RDS)
      */
-    @Bean(name = com.example.myuser.config.DataSourceType.RDS)
+    @Bean(name = DataSourceType.RDS)
     public DataSource rdsDataSource(
             @Value("${rds.jdbc.driver:}")       String driver,
             @Value("${rds.jdbc.url:}")          String jdbcUrl,
@@ -46,7 +46,7 @@ public class RDSDataSourceConfiguration {
 
     @Bean(name = "rdsSqlSessionFactory")
     public SqlSessionFactory sqlSessionFactory(
-            @Qualifier(value = com.example.myuser.config.DataSourceType.RDS) DataSource dataSource) throws Exception {
+            @Qualifier(value = DataSourceType.RDS) DataSource dataSource) throws Exception {
         SqlSessionFactoryBean bean = new SqlSessionFactoryBean();
         bean.setDataSource(dataSource);
         bean.setConfigLocation(new ClassPathResource("mybatis-config.xml"));
@@ -55,7 +55,7 @@ public class RDSDataSourceConfiguration {
 
     @Bean(name = "rdsTransactionManager")
     public PlatformTransactionManager transactionManager(
-            @Qualifier(value = com.example.myuser.config.DataSourceType.RDS) DataSource dataSource) {
+            @Qualifier(value = DataSourceType.RDS) DataSource dataSource) {
         return new DataSourceTransactionManager(dataSource);
     }
 

@@ -23,7 +23,7 @@ import javax.sql.DataSource;
 //@Configuration
 @PropertySource(ignoreResourceNotFound = true, value = { "classpath:jdbc.properties" })
 // ⬇ 配置这个dataSource的mapper文件路径
-@MapperScan(basePackages = { "com.example.myuser.mapper" }, sqlSessionFactoryRef = "sqlSessionFactory2")
+@MapperScan(basePackages = { "com.example.mygoods.mapper" }, sqlSessionFactoryRef = "sqlSessionFactory2")
 public class LocalDataSourceConfiguration {
 
     /**
