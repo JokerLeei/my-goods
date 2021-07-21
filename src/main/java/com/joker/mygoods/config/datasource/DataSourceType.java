@@ -1,4 +1,4 @@
-package com.example.mygoods.config;
+package com.joker.mygoods.config.datasource;
 
 /**
  * datasource bean name

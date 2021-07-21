@@ -1,7 +1,6 @@
-package com.example.mygoods.mapper;
+package com.joker.mygoods.mapper;
 
-import com.example.mygoods.config.DataSourceType;
-import com.example.mygoods.model.Goods;
+import com.joker.mygoods.model.Goods;
 
 import org.apache.ibatis.annotations.Param;
 

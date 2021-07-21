@@ -1,4 +1,4 @@
-package com.example.mygoods.request;
+package com.joker.mygoods.request;
 
 import lombok.Data;
 

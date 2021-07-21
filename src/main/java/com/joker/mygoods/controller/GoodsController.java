@@ -1,8 +1,8 @@
-package com.example.mygoods.controller;
+package com.joker.mygoods.controller;
 
-import com.example.mygoods.mapper.GoodsMapper;
-import com.example.mygoods.model.Goods;
-import com.example.mygoods.request.InsertGoodsRequest;
+import com.joker.mygoods.mapper.GoodsMapper;
+import com.joker.mygoods.model.Goods;
+import com.joker.mygoods.request.InsertGoodsRequest;
 
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
